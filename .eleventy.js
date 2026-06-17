@@ -1,4 +1,5 @@
 const markdownItFootnote = require("markdown-it-footnote");
+const { execSync } = require("child_process");
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -104,6 +105,20 @@ module.exports = function (eleventyConfig) {
   // RFC-822 / RFC-1123 date for the RSS feed (Date.toUTCString gives this format).
   eleventyConfig.addFilter("dateRfc822", function (d) {
     return toDate(d).toUTCString();
+  });
+  // Last Git commit date for a source file — use in templates as:
+  //   {{ page.inputPath | gitDate }}
+  // Falls back to "recently" if git is unavailable or the file is untracked.
+  eleventyConfig.addFilter("gitDate", function (filePath) {
+    try {
+      const raw = execSync(`git log -1 --format=%cI -- "${filePath}"`).toString().trim();
+      if (!raw) return "recently";
+      return new Date(raw).toLocaleDateString("en-US", {
+        year: "numeric", month: "long", day: "numeric"
+      });
+    } catch (e) {
+      return "recently";
+    }
   });
 
   // ----- Slug helper (Eleventy ships `slugify`; alias for clarity) -----
