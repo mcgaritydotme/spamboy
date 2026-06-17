@@ -156,6 +156,9 @@ a { color: inherit; }
   padding: 0.4rem;
   z-index: 20;
 }
+/* Dropdown has no backdrop blur, so use a solid surface in dark mode
+   (the shared --sb-surface is translucent for the blurred header bar). */
+[data-theme="dark"] .sb-mobile-menu { background: #323d4d; }
 .sb-header.is-open .sb-mobile-menu { display: block; }
 .sb-mobile-menu a {
   display: block;
