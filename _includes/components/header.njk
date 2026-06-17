@@ -7,7 +7,7 @@
 
   <nav class="sb-mobile-menu" aria-label="Main navigation">
     {% for item in site.nav %}
-    {% set isActive = page.url == item.url or (item.url != "/" and page.url.startsWith(item.url)) %}
+    {% set isActive = page.url and (page.url == item.url or (item.url != "/" and page.url.startsWith(item.url))) %}
     <a href="{{ item.url }}"{% if isActive %} class="is-active" aria-current="page"{% endif %}>{{ item.label }}</a>
     {% endfor %}
     <div class="sb-mobile-theme">
