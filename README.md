@@ -25,3 +25,4 @@ and publishes `_site/` to GitHub Pages. See the deployment notes below.
 - `.eleventy.js` — Eleventy config (collections, filters, RSS, passthrough)
 
 `preview.html` is a local design reference only and is **not** part of the build.
+
