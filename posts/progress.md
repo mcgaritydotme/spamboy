@@ -7,4 +7,5 @@ tags:
   - website
 draft: false
 ---
-Got a big chunk of the new website up-and-running, including publishing the [[now|Now]], [[projects|Projects]], and [[about|About]] pages.
+
+Got a big chunk of the new website up-and-running, including publishing the [Now](/now/), [Projects](/projects/), and [About](/about/) pages.
