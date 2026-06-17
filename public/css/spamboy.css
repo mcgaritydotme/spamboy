@@ -559,6 +559,16 @@ a { color: inherit; }
 }
 .sb-body .footnotes ol { margin-left: 1.2em; }
 .sb-body .footnotes hr { display: none; }
+/* The plugin emits the rule as a sibling <hr class="footnotes-sep"> and uses
+   .footnotes-list / .footnote-item / .footnote-backref for the list + back-links. */
+.sb-body .footnotes-sep { display: none; }
+.sb-body .footnotes-list { margin-left: 1.2em; }
+.sb-body .footnote-item p { margin: 0.35em 0; }
+.sb-body .footnote-backref {
+  text-decoration: none;
+  margin-left: 0.35em;
+  color: var(--sb-accent, var(--sb-muted));
+}
 
 /* ---------- Figures / images ---------- */
 .sb-figure { margin: 2em 0; }

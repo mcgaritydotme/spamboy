@@ -63,16 +63,11 @@ My first version animated all 47 bars on every hover. On a laptop it was fine. O
 
 The middle row is the whole trick. You can read more about the reasoning in the [CSS containment spec][css-containment], which I finally understood about halfway through this project.
 
-<figure class="sb-figure">
-  <div class="sb-img-wrap">
-    <img src="/img/sunset.jpg" alt="Sunset over the bay from an airport gate">
-  </div>
-  <figcaption>Sunset over the bay &mdash; a sample photo, supplied at 2000&times;1125. Click to enlarge.</figcaption>
-</figure>
+![Sunset over the bay from an airport gate](/img/sunset.jpg "Sunset over the bay — a sample photo, supplied at 2000×1125. Click to enlarge.")
 
 ## What I&rsquo;d do differently
 
-If I started again I&rsquo;d build the data model first and stare at it for a week before writing a single line of layout code.<sup id="ref1"><a href="#fn1">1</a></sup> Almost every painful moment traced back to a data decision I&rsquo;d made carelessly on day one.
+If I started again I&rsquo;d build the data model first and stare at it for a week before writing a single line of layout code.[^data] Almost every painful moment traced back to a data decision I&rsquo;d made carelessly on day one.
 
 Use `position: sticky` for the era labels. Don&rsquo;t reinvent a scroll-spy. And resist &mdash; *truly resist* &mdash; the urge to make the bars do something clever on click.
 
@@ -82,13 +77,16 @@ That&rsquo;s the project. It&rsquo;s live, it&rsquo;s fast, and I never want to 
 
 [css-containment]: https://www.w3.org/TR/css-contain-1/
 
+[^data]: A week sounds excessive. It is not.
+[^ref]: Footnotes are written with `[^id]` in the text and `[^id]: …` anywhere in the post — auto-numbered and back-linked.
+
 ## Appendix — Markdown reference
 
 A quick reference showing how every supported element renders in this theme.
 
 ### Emphasis & inline
 
-Regular text, **bold text**, *italic text*, ***bold italic***, and `inline code`. Here is an [inline link](/feed.xml) and a superscript marker.<sup><a href="#fn1">2</a></sup>
+Regular text, **bold text**, *italic text*, ***bold italic***, and `inline code`. Here is an [inline link](/feed.xml) and a footnote reference.[^ref]
 
 ### Blockquote
 
@@ -134,9 +132,3 @@ function greet(name) {
 
 That is the full set.
 
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn1">A week sounds excessive. It is not. <a href="#ref1">&#8617;</a></li>
-</ol>
-</div>

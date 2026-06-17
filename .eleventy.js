@@ -1,3 +1,5 @@
+const markdownItFootnote = require("markdown-it-footnote");
+
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -18,6 +20,40 @@ module.exports = function (eleventyConfig) {
   // Custom domain marker — remove this line (and the CNAME file) if you're
   // serving from a github.io address instead of a custom domain.
   eleventyConfig.addPassthroughCopy("CNAME");
+
+  // ----- Markdown: footnotes -----
+  // Adds standard footnote syntax:  a claim[^1]   …   [^1]: the note.
+  // Auto-numbered and back-linked; styled by the .footnotes rules in the CSS.
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItFootnote));
+
+  // ----- Markdown: image figures -----
+  // Lets authors write plain Markdown images and get the full framed,
+  // click-to-enlarge figure treatment — no HTML required:
+  //   ![alt text](/img/x.jpg "Optional caption")
+  // A standalone image (its own paragraph) becomes:
+  //   <figure class="sb-figure"><div class="sb-img-wrap"><img …></div>
+  //     <figcaption>Optional caption</figcaption></figure>
+  // The image title (the "…" part) becomes the visible caption; alt stays
+  // on the <img> for accessibility. Images used inline in a sentence are
+  // left untouched. .sb-img-wrap is what the lightbox script hooks into.
+  eleventyConfig.addTransform("imageFigures", function (content) {
+    const out = this.page && this.page.outputPath;
+    if (!out || !out.endsWith(".html")) return content;
+    return content.replace(
+      /<p>(<img\b[^>]*>)<\/p>/g,
+      function (_whole, imgTag) {
+        const titleMatch = imgTag.match(/\stitle="([^"]*)"/);
+        const caption = titleMatch ? titleMatch[1] : "";
+        const img = imgTag.replace(/\stitle="[^"]*"/, "");
+        return (
+          '<figure class="sb-figure">\n' +
+          '  <div class="sb-img-wrap">' + img + "</div>" +
+          (caption ? "\n  <figcaption>" + caption + "</figcaption>" : "") +
+          "\n</figure>"
+        );
+      }
+    );
+  });
 
   // ----- Collections -----
   // Newest-first posts collection.
