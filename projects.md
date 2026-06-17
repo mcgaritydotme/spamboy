@@ -2,19 +2,27 @@
 layout: page.njk
 title: Projects
 permalink: /projects/
-draft: true
+draft: false
 ---
 
-Things I&rsquo;ve made, in various states of finished.
+Things I've made, in various states of finished.
 
 ## Presidents in Time
 
-An interactive grid plotting all 47 US presidents across their lifespans &mdash; who overlapped with whom, who lived longest, who barely made it. A small thing that took an embarrassingly long time. [Read the write-up &rarr;](/blog/markdown-showcase/)
+An interactive grid plotting all 47 US presidents across their lifespans — who overlapped with whom, who lived longest, who barely made it. Read down a column to follow one life across the decades — born, coming of age, rising to office, and beyond. Read across a row to see who was contemporaneous in any given four-year window.  Check it out [here](https://presidentsintime.com).
 
-## Spamboy
+## My Life In Weeks
 
-This site. A hand-built Eleventy theme, deliberately plain, deliberately fast. The whole point was to have somewhere to write that I actually enjoy looking at.
+I stood up a [website that illustrate my life](https://weeks.mcgarity.me/?ref=mcgarity.me) where each box represents a week past or present. It's interesting to see on a single screen just how much has occurred — and how much more there is to come!
 
-## Odds &amp; ends
+## Spamboy.com
 
-A scattering of half-projects: a tiny CLI for renaming photos by EXIF date, a bookmarklet that strips tracking parameters from URLs, and a spreadsheet I refuse to turn into an app.
+This site. A vibe-coded Eleventy theme, deliberately plain, deliberately fast. The whole point was to have somewhere to write that I actually enjoy looking at but didn't get in the way of publishing.
+
+## Everyday
+
+Since 2012, I’ve been recording my life by taking daily selfies, then compiling them into a time-lapse video. You can witness the latest progress [here](https://mcgarity.me/everyday/).
+
+## 1 Second Everyday
+
+In the same span of time, I've also been splicing together semi-daily second-long video clips into a larger video that shows just how amazing of a life I’ve packed into the past several years. Check it out [here](https://mcgarity.me/1se/).
