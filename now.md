@@ -2,6 +2,7 @@
 layout: page.njk
 title: Now
 permalink: /now/
+draft: true
 ---
 
 A snapshot of what I&rsquo;m focused on at the moment. This page changes a few times a year &mdash; it&rsquo;s a [now page](https://nownownow.com/about), not a feed.

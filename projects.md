@@ -2,6 +2,7 @@
 layout: page.njk
 title: Projects
 permalink: /projects/
+draft: true
 ---
 
 Things I&rsquo;ve made, in various states of finished.
