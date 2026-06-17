@@ -7,8 +7,13 @@
 
   <nav class="sb-mobile-menu" aria-label="Main navigation">
     {% for item in site.nav %}
+    {#- Only render the link if a published page actually exists at this URL.
+        Drafts are absent from collections in production, so their nav links
+        disappear automatically (and remain during local serve for preview). -#}
+    {%- for p in collections.all %}{% if p.url == item.url %}
     {% set isActive = page.url and (page.url == item.url or (item.url != "/" and page.url.startsWith(item.url))) %}
     <a href="{{ item.url }}"{% if isActive %} class="is-active" aria-current="page"{% endif %}>{{ item.label }}</a>
+    {% endif %}{% endfor %}
     {% endfor %}
     <div class="sb-mobile-theme">
       <button class="sb-theme-toggle" data-theme-toggle type="button" aria-label="Toggle colour theme">

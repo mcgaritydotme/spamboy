@@ -364,6 +364,7 @@ a { color: inherit; }
 
 /* ToC sidebar */
 .sb-toc {
+  grid-column: 1;
   position: sticky;
   top: 76px;
   align-self: start;
@@ -394,9 +395,14 @@ a { color: inherit; }
 
 /* Article column */
 .sb-article {
+  /* Pin to the centre track so a hidden/absent ToC (heading-less posts,
+     where toc.js sets display:none) can't reflow the article into the
+     narrow 200px first column. */
+  grid-column: 2;
   padding: 2.5rem 3rem 4rem;
   min-width: 0;
 }
+.sb-gutter { grid-column: 3; }
 .sb-backlink {
   display: inline-block;
   font-family: var(--sb-sans);
@@ -714,7 +720,7 @@ a { color: inherit; }
   }
   .sb-toc { display: none; }
   .sb-gutter { display: none; }
-  .sb-article { padding: 2rem 1.5rem 3rem; }
+  .sb-article { grid-column: 1; padding: 2rem 1.5rem 3rem; }
 }
 
 @media (max-width: 640px) {

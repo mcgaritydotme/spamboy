@@ -21,6 +21,18 @@ module.exports = function (eleventyConfig) {
   // serving from a github.io address instead of a custom domain.
   eleventyConfig.addPassthroughCopy("CNAME");
 
+  // ----- Drafts (global) -----
+  // Any file with `draft: true` in its front matter — posts, or root pages
+  // like now.md / projects.md — is dropped from the production build entirely:
+  // no page output, and excluded from every collection, feed, and tag list.
+  // Drafts still render during local `eleventy --serve` so you can preview them.
+  // ELEVENTY_RUN_MODE is "build" for production; "serve"/"watch" locally.
+  eleventyConfig.addPreprocessor("drafts", "*", (data) => {
+    if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+      return false; // discard this file from the build
+    }
+  });
+
   // ----- Markdown: footnotes -----
   // Adds standard footnote syntax:  a claim[^1]   …   [^1]: the note.
   // Auto-numbered and back-linked; styled by the .footnotes rules in the CSS.
