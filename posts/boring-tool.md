@@ -6,6 +6,7 @@ tags:
   - notes
 excerpt: Every few months I rediscover that the unglamorous, decade-old tool is the one that actually ships the work. This is me writing it down so I stop forgetting.
 layout: post.njk
+draft: true
 ---
 
 Every few months I rediscover that the unglamorous, decade-old tool is the one that actually ships the work. This is me writing it down so I stop forgetting.

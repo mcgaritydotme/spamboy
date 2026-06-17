@@ -6,6 +6,7 @@ tags:
   - tech
 excerpt: I've been obsessing over this side project for months — an interactive grid plotting all 47 presidents across their lifespans. Simple to describe. Genuinely annoying to build.
 layout: post.njk
+draft: true
 ---
 
 I&rsquo;ve been obsessing over this side project for months &mdash; an interactive grid plotting all 47 presidents across their lifespans. Simple to describe. Genuinely annoying to build. What follows is part build log, part list of things I wish someone had told me before I started.
