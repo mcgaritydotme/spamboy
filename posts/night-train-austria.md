@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Notes From a Night Train Through Austria
 date: 2026-05-28
 tags:
@@ -6,7 +7,6 @@ tags:
   - notes
 excerpt: There is a particular kind of thinking that only happens at 70mph in the dark, with a stranger asleep across the aisle and your phone refusing to find signal.
 layout: post.njk
-draft: true
 ---
 
 There is a particular kind of thinking that only happens at 70mph in the dark, with a stranger asleep across the aisle and your phone refusing to find signal.

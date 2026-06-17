@@ -1,4 +1,5 @@
 ---
+draft: true
 title: On Keeping a Notebook You Never Reread
 date: 2025-07-02
 tags:
@@ -6,7 +7,6 @@ tags:
   - writing
 excerpt: I fill notebooks constantly and almost never open the old ones. For years I thought this was a failure. I have changed my mind.
 layout: post.njk
-draft: true
 ---
 
 I fill notebooks constantly and almost never open the old ones. For years I thought this was a failure. I have changed my mind.

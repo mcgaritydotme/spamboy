@@ -23,5 +23,9 @@ permalink: /
         </div>
       {%- endif -%}
     {%- endfor -%}
+
+    {%- if collections.posts.length == 0 -%}
+    <p class="sb-intro">Nothing here yet. The first entries are on their way.</p>
+    {%- endif -%}
   </div>
 </div>

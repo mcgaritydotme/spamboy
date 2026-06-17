@@ -1,4 +1,5 @@
 ---
+draft: true
 title: The Coffee Map I Keep in My Head
 date: 2025-11-15
 tags:
@@ -6,7 +7,6 @@ tags:
   - coffee
 excerpt: Wherever I land, the first thing I build is a mental map of where to get a decent flat white. Here is the unscientific method I have refined over far too many cups.
 layout: post.njk
-draft: true
 ---
 
 Wherever I land, the first thing I build is a mental map of where to get a decent flat white. Here is the unscientific method I have refined over far too many cups.
