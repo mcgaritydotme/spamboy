@@ -1,7 +1,5 @@
 node_modules/
 _site/
 .DS_Store
-.obsidian/workspace.json
-.obsidian/templates.json
-.obsidian/workspace.json
+.obsidian/
 templates/post.md
