@@ -723,11 +723,60 @@ a { color: inherit; }
   .sb-article { grid-column: 1; padding: 2rem 1.5rem 3rem; }
 }
 
+/* ---- Mobile typography ----
+   Desktop px sizes read well but are too small on phones, so bump the
+   text ~1.5x at narrow widths. Desktop (>768px) is left untouched.
+   Unitless line-heights scale with these automatically. */
+@media (max-width: 768px) {
+  body { font-size: 27px; }
+
+  .sb-wordmark { font-size: 26px; }
+  .sb-mobile-menu a { font-size: 19px; }
+  .sb-theme-toggle { font-size: 19px; }
+
+  /* Home + list pages */
+  .sb-eyebrow { font-size: 25px; }
+  .sb-intro { font-size: 28px; }
+  .sb-entry-year { font-size: 17px; }
+  .sb-entry-title { font-size: 26px; }
+  .sb-entry-date { font-size: 18px; }
+  .sb-page-title { font-size: 38px; }
+  .sb-subhead { font-size: 23px; }
+  .sb-card-meta { font-size: 18px; }
+  .sb-card-title { font-size: 29px; }
+  .sb-card-excerpt { font-size: 25px; }
+  .sb-pagination a { font-size: 17px; }
+
+  /* Article */
+  .sb-backlink { font-size: 17px; }
+  .sb-article-meta { font-size: 18px; }
+  .sb-article-title { font-size: 42px; }
+  .sb-body p { font-size: 26px; }
+  .sb-body h2 { font-size: 32px; }
+  .sb-body h3 { font-size: 26px; }
+  .sb-body code { font-size: 20px; }
+  .sb-body pre code { font-size: 19px; }
+  .sb-body table { font-size: 20px; }
+  .sb-body th { font-size: 16px; }
+  .sb-body .footnotes { font-size: 20px; }
+  .sb-figure figcaption { font-size: 19px; }
+
+  /* Tags + footer */
+  .sb-tag { font-size: 15px; }
+  .sb-results-label { font-size: 16px; }
+  .sb-cloud-tag.sz-xl { font-size: 24px; }
+  .sb-cloud-tag.sz-lg { font-size: 21px; }
+  .sb-cloud-tag.sz-md { font-size: 19px; }
+  .sb-cloud-tag.sz-sm { font-size: 18px; }
+  .sb-cloud-tag.sz-xs { font-size: 16px; }
+  .sb-footer { font-size: 18px; }
+}
+
 @media (max-width: 640px) {
   .sb-mobile-menu { left: 1rem; right: 1rem; min-width: 0; }
   .sb-column { padding: 2.5rem 1.5rem 3rem; }
 }
 
 @media (max-width: 400px) {
-  .sb-article-title { font-size: 24px; }
+  .sb-article-title { font-size: 34px; }
 }
