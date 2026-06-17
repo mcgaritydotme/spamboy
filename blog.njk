@@ -1,0 +1,33 @@
+---
+layout: base.njk
+pagination:
+  data: collections.posts
+  size: 5
+  alias: postsList
+permalink: "{% if pagination.pageNumber == 0 %}/blog/{% else %}/blog/page-{{ pagination.pageNumber + 1 }}/{% endif %}"
+eleventyComputed:
+  title: Blog
+---
+<div class="sb-column">
+  <h1 class="sb-page-heading">Blog</h1>
+  <p class="sb-subhead">All entries, newest first.</p>
+
+  {%- for post in postsList %}
+  <article class="sb-card">
+    <div class="sb-card-meta">
+      <time datetime="{{ post.date | dateISO }}">{{ post.date | dateDisplay }}</time>
+      {%- if post.data.tags %}
+        <span class="sb-dot">&middot;</span>
+        {%- for tag in post.data.tags %}{% if tag != "posts" %}<a class="sb-tag" href="/tags/{{ tag | tagSlug }}/">{{ tag }}</a>{% endif %}{%- endfor %}
+      {%- endif %}
+    </div>
+    <a class="sb-card-title" href="{{ post.url }}">{{ post.data.title }}</a>
+    {%- if post.data.excerpt %}<p class="sb-card-excerpt">{{ post.data.excerpt }}</p>{% endif %}
+  </article>
+  {%- endfor %}
+
+  <nav class="sb-pagination">
+    <a class="{% if not pagination.href.previous %}is-hidden{% endif %}" href="{{ pagination.href.previous or '#' }}">&larr; Newer</a>
+    <a class="{% if not pagination.href.next %}is-hidden{% endif %}" href="{{ pagination.href.next or '#' }}">Older &rarr;</a>
+  </nav>
+</div>

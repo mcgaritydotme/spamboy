@@ -1,0 +1,29 @@
+---
+layout: base.njk
+---
+<article class="sb-post">
+  <nav class="sb-toc" aria-label="Table of contents"></nav>
+
+  <div class="sb-article">
+    <a class="sb-backlink" href="/blog/">&larr; All entries</a>
+
+    <div class="sb-article-meta">
+      <time datetime="{{ page.date | dateISO }}">{{ page.date | dateDisplay }}</time>
+      {% if tags %}
+        <span class="sb-dot">&middot;</span>
+        {% for tag in tags %}{% if tag != "posts" %}<a class="sb-tag" href="/tags/{{ tag | tagSlug }}/">{{ tag }}</a>{% endif %}{% endfor %}
+      {% endif %}
+    </div>
+
+    <h1 class="sb-article-title">{{ title }}</h1>
+
+    <div class="sb-body">
+      {{ content | safe }}
+    </div>
+  </div>
+
+  <div class="sb-gutter"></div>
+</article>
+
+<script src="/js/toc.js"></script>
+<script src="/js/lightbox.js"></script>

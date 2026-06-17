@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if title %}{{ title }} &middot; {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ excerpt or description or site.description }}">
+
+  {# ---- No-flash dark mode: applied before first paint ---- #}
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('sb-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  {# ---- Fonts ---- #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/spamboy.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
+
+  {# ---- Open Graph / social ---- #}
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ excerpt or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  {% include "components/header.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "components/footer.njk" %}
+
+  <script src="/js/theme.js"></script>
+</body>
+</html>

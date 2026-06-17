@@ -1,0 +1,27 @@
+---
+layout: base.njk
+permalink: /
+---
+<div class="sb-column">
+  <p class="sb-eyebrow"><em>a traveller&rsquo;s notebook</em></p>
+  <p class="sb-intro">{{ site.description }} Field notes, half-finished thoughts, and the occasional thing I built. No schedule, no theme &mdash; just whatever&rsquo;s on my mind.</p>
+
+  <div class="sb-entries">
+    {%- set recent = collections.posts -%}
+    {%- for post in recent -%}
+      {%- if loop.index0 < 9 -%}
+        {%- set y = post.date | dateYear -%}
+        {%- set prevY = (recent[loop.index0 - 1].date | dateYear) if not loop.first else 0 -%}
+        {%- set primary = post.data.tags | primaryTag -%}
+        <div class="sb-entry">
+          <span class="sb-entry-year">{% if loop.first or y != prevY %}{{ y }}{% endif %}</span>
+          <span class="sb-entry-main">
+            <a class="sb-entry-title" href="{{ post.url }}">{{ post.data.title }}</a>
+            {%- if primary -%}<a class="sb-tag" href="/tags/{{ primary | tagSlug }}/">{{ primary }}</a>{%- endif -%}
+          </span>
+          <span class="sb-entry-date">{{ post.date | dateDisplay }}</span>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>

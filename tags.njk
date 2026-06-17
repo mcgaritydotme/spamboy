@@ -1,0 +1,56 @@
+---
+layout: base.njk
+permalink: /tags/
+title: Tags
+---
+<div class="sb-column">
+  <h1 class="sb-page-heading">Tags</h1>
+  <p class="sb-subhead">Everything I&rsquo;ve written about, loosely organised. Tag size reflects post count.</p>
+
+  <div class="sb-tag-cloud">
+    {%- for entry in collections.tagList %}
+      {%- set sz = "sz-xs" -%}
+      {%- if entry.count >= 10 %}{% set sz = "sz-xl" %}
+      {%- elif entry.count >= 7 %}{% set sz = "sz-lg" %}
+      {%- elif entry.count >= 4 %}{% set sz = "sz-md" %}
+      {%- elif entry.count >= 2 %}{% set sz = "sz-sm" %}{% endif -%}
+    <button type="button" class="sb-cloud-tag {{ sz }}" data-tag="{{ entry.tag }}">{{ entry.tag }}<span class="sb-count">{{ entry.count }}</span></button>
+    {%- endfor %}
+  </div>
+
+  {%- for entry in collections.tagList %}
+  <div class="sb-tag-results" data-tag-results="{{ entry.tag }}" hidden>
+    <p class="sb-results-label">{{ entry.count }} {{ "entry" if entry.count == 1 else "entries" }} tagged &ldquo;{{ entry.tag }}&rdquo;</p>
+    <hr class="sb-results-divider">
+    <div class="sb-entries sb-entries--compact">
+      {%- for post in collections.posts %}{% if entry.tag in post.data.tags %}
+      <div class="sb-entry">
+        <span class="sb-entry-main"><a class="sb-entry-title" href="{{ post.url }}">{{ post.data.title }}</a></span>
+        <span class="sb-entry-date">{{ post.date | dateDisplay }}</span>
+      </div>
+      {% endif %}{%- endfor %}
+    </div>
+  </div>
+  {%- endfor %}
+</div>
+
+<script>
+(function () {
+  var cloud = document.querySelector('.sb-tag-cloud');
+  if (!cloud) return;
+  var buttons = [].slice.call(cloud.querySelectorAll('.sb-cloud-tag'));
+  var panels = [].slice.call(document.querySelectorAll('[data-tag-results]'));
+  function hideAll() { panels.forEach(function (p) { p.hidden = true; }); }
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var selected = btn.classList.contains('is-selected');
+      buttons.forEach(function (b) { b.classList.remove('is-selected'); });
+      hideAll();
+      if (selected) return; // re-click deselects and hides
+      btn.classList.add('is-selected');
+      var panel = document.querySelector('[data-tag-results="' + btn.getAttribute('data-tag') + '"]');
+      if (panel) panel.hidden = false;
+    });
+  });
+})();
+</script>

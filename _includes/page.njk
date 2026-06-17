@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<div class="sb-column">
+  <h1 class="sb-page-heading">{{ title }}</h1>
+  {% if subhead %}<p class="sb-subhead">{{ subhead }}</p>{% endif %}
+  <div class="sb-body">
+    {{ content | safe }}
+  </div>
+</div>

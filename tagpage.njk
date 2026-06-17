@@ -1,0 +1,25 @@
+---
+layout: base.njk
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tagEntry
+permalink: "/tags/{{ tagEntry.tag | tagSlug }}/"
+eleventyComputed:
+  title: "Tagged: {{ tagEntry.tag }}"
+---
+<div class="sb-column">
+  <a class="sb-backlink" href="/tags/">&larr; All tags</a>
+  <h1 class="sb-page-heading">{{ tagEntry.tag }}</h1>
+  <p class="sb-results-label">{{ tagEntry.count }} {{ "entry" if tagEntry.count == 1 else "entries" }} tagged &ldquo;{{ tagEntry.tag }}&rdquo;</p>
+  <hr class="sb-results-divider">
+
+  <div class="sb-entries sb-entries--compact">
+    {%- for post in collections.posts %}{% if tagEntry.tag in post.data.tags %}
+    <div class="sb-entry">
+      <span class="sb-entry-main"><a class="sb-entry-title" href="{{ post.url }}">{{ post.data.title }}</a></span>
+      <span class="sb-entry-date">{{ post.date | dateDisplay }}</span>
+    </div>
+    {% endif %}{%- endfor %}
+  </div>
+</div>
