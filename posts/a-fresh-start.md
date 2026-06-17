@@ -1,8 +1,7 @@
 ---
 draft: false
 title: A Fresh Start
-date:
-  "{ today }":
+date: 2026-06-17
 tags:
   - thoughts
 excerpt: This blog's Hello World
