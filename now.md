@@ -10,5 +10,5 @@ A snapshot of what I'm' focused on at the moment. This page changes occasionally
 - **Building.** A small interactive grid charting the lifespans of every US president. More annoying than it sounds.
 - **Somewhere.** Currently between cities, living out of one bag and a laptop.
 
-_Last updated: {{ page.inputPath | gitDate | date("MMMM d, yyyy") }}_
+_Last updated: {{ page.inputPath | gitDate }}_
 
