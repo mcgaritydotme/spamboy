@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
       <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
       <pubDate>{{ post.date | dateRfc822 }}</pubDate>
       {%- if post.data.tags %}{% for tag in post.data.tags %}{% if tag != "posts" %}<category>{{ tag }}</category>{% endif %}{% endfor %}{% endif %}
-      <description><![CDATA[{{ post.templateContent }}]]></description>
+      <description><![CDATA[{{ post.templateContent | safe }}]]></description>
     </item>
     {%- endfor %}
   </channel>
