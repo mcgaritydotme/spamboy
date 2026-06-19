@@ -5,7 +5,7 @@ title: Beta Dreams
 excerpt: A strange mixture of an iOS beta and dream land
 tags:
   - nostalgia
-draft: true
+draft: false
 ---
 I've been testing the iOS 27 beta on my iPad Mini the past couple days, because I wanted to get a glimpse of what a smart Siri could do for me. So far, it's impressive — enough so that I'd consider upgrading my daily carry device were I not so broke!
 
