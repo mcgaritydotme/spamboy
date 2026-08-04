@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-date: 0003-08-03
+date: 2026-08-03
 title: Highway Signs, Ranked From Best to Least
 excerpt: 75 signs for your viewing pleasure!
 tags:
