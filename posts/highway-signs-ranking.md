@@ -7,7 +7,7 @@ tags:
   - lists
 draft: false
 ---
-I'm still thinking about [Hawaiian Interstate Highway signs](highway-signs).  And many, many more!
+I'm still thinking about [Hawaiian Interstate Highway signs](./highway-signs).  And many, many more!
 
 After reading about [their interstate highways](https://en.wikipedia.org/wiki/List_of_state_highways_in_Hawaii), I fell down the Wikipedia rabbit hole and found myself on the [numbered highway signs article](https://en.wikipedia.org/wiki/Numbered_highways_in_the_United_States).  Then spent way too much with the table below.
 
